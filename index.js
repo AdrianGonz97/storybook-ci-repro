@@ -20,7 +20,8 @@ async function run(dir) {
 		await exec(svCmd, svArgs, { nodeOptions: { stdio: "pipe", cwd: project } });
 
 		// run storybook init
-		const storybook = "pnpm dlx storybook@latest init --skip-install --no-dev";
+		const storybook =
+			"pnpm dlx storybook@latest init --skip-install --no-dev --package-manager pnpm";
 		const [sbCmd, ...sbArgs] = storybook.split(" ");
 		await exec(sbCmd, sbArgs, {
 			nodeOptions: {
