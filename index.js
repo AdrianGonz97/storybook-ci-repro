@@ -27,6 +27,7 @@ async function run(dir) {
 				cwd: project,
 				stdio: "inherit",
 			},
+			throwOnError: true,
 		});
 	} catch (e) {
 		console.error(e);
