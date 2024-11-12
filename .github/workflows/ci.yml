@@ -6,13 +6,9 @@ on:
       - main
   pull_request:
 
-# cancel in-progress runs on new commits to same PR (gitub.event.number)
-concurrency:
-  group: ${{ github.workflow }}-${{ github.event.number || github.sha }}
-  cancel-in-progress: true
-
 jobs:
   test:
+    timeout-minutes: 3
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
