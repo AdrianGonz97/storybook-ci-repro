@@ -30,5 +30,6 @@ async function run(dir) {
 		});
 	} catch (e) {
 		console.error(e);
+		process.exit(1);
 	}
 }
